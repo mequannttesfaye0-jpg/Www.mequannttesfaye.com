@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mequannt Tesfaye Zewudie - Computer Engineer Portfolio">
+    <title>Mequannt Tesfaye | Computer Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --text: #1a2a3a;
+            --accent: #2c6e9e;
+        }
+        body.dark {
+            --bg: #0f1724;
+            --card: #1a1f2e;
+            --text: #e2e8f0;
+            --accent: #4f9dc4;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: all 0.3s;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        header {
+            background: linear-gradient(135deg, #0f2b3d, #1a4a6f);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-bar span {
+            color: white;
+        }
+        section {
+            background: var(--card);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        section h2 {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .skill-category {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .skill-category ul {
+            list-style: none;
+        }
+        .skill-category li {
+            padding: 5px 0;
+        }
+        .certs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .cert-badge {
+            background: var(--bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .project-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .project-tech {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .contact-info a {
+            background: var(--bg);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .contact-info a:hover {
+            background: var(--accent);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #0f2b3d, #1a4a6f);
+            color: white;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            section { padding: 20px; }
+            .contact-bar { gap: 12px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <header>
+        <div class="container">
+            <h1>Mequannt Tesfaye Zewudie</h1>
+            <p style="font-size: 1.2rem;">Computer Engineer | Web Developer | AI Enthusiast | Data Analyst</p>
+            <div class="contact-bar">
+                <span>📧 mequannttesfaye0@gmail.com</span>
+                <span>📞 +251 934 247 590</span>
+                <span>📍 Ethiopia</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>About Me</h2>
+            <p>I am a passionate Computer Engineer graduated from Mizan Tepi University (2021) with international certifications in Android Development, Artificial Intelligence, Data Analytics, and Programming. I specialize in web development, database administration, mobile applications, and AI-driven solutions.</p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px;">
+                <h3 style="color: var(--accent);">BSc in Electrical and Computer Engineering</h3>
+                <p><strong>Computer Engineering Stream</strong></p>
+                <p>Mizan Tepi University | Graduated: 2021 G.C.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <div class="certs-list">
+                <div class="cert-badge">📊 Holistic COC<br>Database Administration</div>
+                <div class="cert-badge">🌐 Holistic COC<br>Web Development</div>
+                <div class="cert-badge">📱 Android Development</div>
+                <div class="cert-badge">🤖 Artificial Intelligence</div>
+                <div class="cert-badge">📈 Data Analyst</div>
+                <div class="cert-badge">💻 Fundamental Programming</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><h3>🌐 Web Development</h3><ul><li>HTML, CSS, JavaScript</li><li>React, Node.js</li><li>PHP, REST APIs</li></ul></div>
+                <div class="skill-category"><h3>🗄️ Database</h3><ul><li>MySQL, PostgreSQL</li><li>MongoDB</li><li>Database Design</li></ul></div>
+                <div class="skill-category"><h3>📱 Android</h3><ul><li>Kotlin, Java</li><li>Android Studio</li><li>Firebase</li></ul></div>
+                <div class="skill-category"><h3>🤖 AI & ML</h3><ul><li>Python, TensorFlow</li><li>Scikit-learn</li><li>Machine Learning</li></ul></div>
+                <div class="skill-category"><h3>📊 Data Analytics</h3><ul><li>Pandas, NumPy</li><li>Power BI</li><li>Data Visualization</li></ul></div>
+                <div class="skill-category"><h3>💻 Programming</h3><ul><li>Python, Java</li><li>JavaScript, Kotlin</li><li>PHP, SQL</li></ul></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card"><h3>Student Information System</h3><div class="project-date">2021</div><p>Web-based student record management system with secure authentication.</p><span class="project-tech">PHP</span><span class="project-tech">MySQL</span></div>
+                <div class="project-card"><h3>E-Commerce Mobile App</h3><div class="project-date">2022</div><p>Android shopping app with real-time inventory and Firebase.</p><span class="project-tech">Kotlin</span><span class="project-tech">Firebase</span></div>
+                <div class="project-card"><h3>House Price Prediction</h3><div class="project-date">2023</div><p>ML model with 89% accuracy for real estate price prediction.</p><span class="project-tech">Python</span><span class="project-tech">Scikit-learn</span></div>
+                <div class="project-card"><h3>Sales Analytics Dashboard</h3><div class="project-date">2023</div><p>Interactive dashboard visualizing sales trends and insights.</p><span class="project-tech">Python</span><span class="project-tech">Power BI</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <a href="mailto:mequannttesfaye0@gmail.com">📧 Email Me</a>
+                <a href="tel:+251934247590">📞 Call Me</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 Mequannt Tesfaye Zewudie</p>
+        <p>📧 mequannttesfaye0@gmail.com | 📞 +251 934 247 590</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        }
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+            document.querySelector('.theme-toggle').textContent = '☀️';
+        }
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
